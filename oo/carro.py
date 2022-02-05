@@ -21,7 +21,7 @@
     0
     >>> direcao= Direcao()
     >>> direcao.valor
-    'Norte
+    'Norte'
     >>> direcao.girar_a_direita()
     >>> direcao.valor
     'Leste'
@@ -73,6 +73,35 @@
 
 
 """
+
+NORTE = 'Norte'
+SUL = 'Sul'
+LESTE = 'Leste'
+OESTE = 'Oeste'
+
+
+class Direcao:
+    rotacao_a_direita_dct = {
+        NORTE: LESTE,
+        LESTE: SUL,
+        SUL: OESTE,
+        OESTE: NORTE
+    }
+    rotacao_a_esquerda_dct = {
+        LESTE: NORTE,
+        SUL: LESTE,
+        OESTE: SUL,
+        NORTE: OESTE
+    }
+
+    def __init__(self):
+        self.valor = NORTE
+
+    def girar_a_direita(self):
+        self.valor = self.rotacao_a_direita_dct[self.valor]
+
+    def girar_a_esquerda(self):
+        self.valor = self.rotacao_a_esquerda_dct[self.valor]
 
 
 class Motor:
