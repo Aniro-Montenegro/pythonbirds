@@ -15,9 +15,6 @@ class CarroTestCase(TestCase):
 
 
 
-
-
-
 '''
 python -m unittest discover oo
 
